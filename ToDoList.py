@@ -8,6 +8,8 @@ while True:
         case 'add':
             todo = input("Enter a task: ")
             todos.append(todo)
+            # when new todo added, it opens the file
+            file = open('todo.txt',  'w')
         case 'show':
             for index, item in enumerate(todos):
                 print(f"{index + 1}-{item}")
