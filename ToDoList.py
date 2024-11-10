@@ -10,14 +10,17 @@ while True:
             # + "\n" adds new line in text file
             todo = input("Enter a task: ") + "\n"
 
+            # open and close file
             file = open('todo.txt', 'r')
             todos = file.readlines()
+            file.close()
 
             todos.append(todo)
 
-            # when new todo added it opens the file
+            # when new todo added it # opens file then closes file
             file = open('todo.txt',  'w')
             file.writelines(todos)
+            file.close()
         case 'show':
             for index, item in enumerate(todos):
                 print(f"{index + 1}-{item}")
